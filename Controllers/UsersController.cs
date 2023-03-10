@@ -8,52 +8,47 @@ using api.Models;
 
 namespace api.Controllers
 {
-    [Route("api/Songs")]
+    [Route("api/Users")]
     [ApiController]
-    public class SongsController : ControllerBase
+    public class UsersController : ControllerBase
     {
         //Create : POST
         //Read : GET
         //Update : PUT
         //Delete : DELETE
 
-        // GET: api/Songs
+        // GET: api/Users
         [HttpGet]
-        public IEnumerable<Song> Get()
+        public IEnumerable<User> GET()
         {
-            List<Song> songs = new List<Song>();
-            Song mySong = new Song();
-            mySong.Title = "Evan";
-            mySong.Artist = "Cool Dude";
-            mySong.ID = 0;
-            mySong.Favorited = false;
-            mySong.Deleted = false;
-            mySong.DateTimeAdded = DateTime.Now;
-            songs.Add(mySong);
-            return songs;
-            //return new string[] { "Title", "Artist" };
+            List<User> users = new List<User>();
+            User myUser = new User();
+            myUser.UserID = "Evan313";
+            myUser.UserPassword = "12345";
+            users.Add(myUser);
+            return users;
         }
 
-        // GET: api/Songs/5
-        [HttpGet("{id}", Name = "GetSong")]
+        // GET: api/Users/5
+        [HttpGet("{id}", Name = "GetUser")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/Songs
+        // POST: api/Users
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT: api/Songs/5
+        // PUT: api/Users/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
-        // DELETE: api/Songs/5
+        // DELETE: api/Users/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
